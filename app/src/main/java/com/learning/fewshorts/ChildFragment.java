@@ -51,7 +51,7 @@ public class ChildFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_child, container, false);
-        //imageView = (ImageView) view .findViewById(R.id.imageHere);
+        imageView = (ImageView) view .findViewById(R.id.imageHere);
         tvTitle = (TextView) view.findViewById(R.id.titleHere);
         tvSource = (TextView) view.findViewById(R.id.sourceHere);
         tvDate = (TextView) view.findViewById(R.id.dateHere);
@@ -61,6 +61,12 @@ public class ChildFragment extends Fragment {
 
         SingleObject temp = SingleObject.getInstance();
         List<String>lekhak = temp.getWriter();
+
+        List<String>title = temp.getTitle();
+        List<String>date = temp.getPublishedAt();
+        List<String>url = temp.getUrlToImage();
+        List<String>desc = temp.getDescription();
+
         int pos = temp.getPosi();
         int siz = temp.getNumber();
 
@@ -72,7 +78,19 @@ public class ChildFragment extends Fragment {
 
 
         tvSource.setText(String.valueOf(lekhak.get(pos)));
+        tvTitle.setText(String.valueOf(title.get(pos)));
+        tvDate.setText(String.valueOf(date.get(pos)));
+        //Image Loading
+        try {
 
+            Picasso.with(getContext()).load(url.get(pos)).into(imageView);
+
+        }catch (Exception e){
+
+            //Failed then back to Same Image
+
+            Log.d("Picasssso: ",e.getMessage());
+        }
 
         return view;
 

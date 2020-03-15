@@ -18,11 +18,13 @@ import com.learning.fewshorts.RecievedData.Headlines;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.Url;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -80,10 +82,47 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 Log.d("Author", String.valueOf(lekhak));
+                Log.d("Title", String.valueOf(title));
+                Log.d("Desc", String.valueOf(descr));
+                Log.d("Url", String.valueOf(url));
+                Log.d("Date", String.valueOf(date));
+                Log.d("Siz:",String.valueOf(title.size()));
+
 
                 SingleObject temp = SingleObject.getInstance();
                 temp.setWriter(lekhak);
                 temp.setNumber(lekhak.size());
+
+                temp.setTitle(title);
+                temp.setDescription(descr);
+                temp.setPublishedAt(date);
+                temp.setUrlToImage(url);
+
+
+            }
+
+            @Override
+            public void onFailure(Call<Headlines> call, Throwable t) {
+                t.getLocalizedMessage();
+            }
+        });
+
+
+
+        viewPager = (VerticalViewPager) findViewById(R.id.ViewPager);
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(viewPagerAdapter);
+    }
+
+}
+
+/*
+        Article a = (Article) articles;
+        SingleObject temp = SingleObject.getInstance();
+        temp.setAuthor(a.getAuthor());
+        temp.setTitle(a.getTitle());
+        temp.setPublishedAt(a.getPublishedAt());
+
 
                 Bundle bundle = new Bundle();
 
@@ -95,26 +134,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            }
 
-            @Override
-            public void onFailure(Call<Headlines> call, Throwable t) {
-                t.getLocalizedMessage();
-            }
-        });
-/*
-        Article a = (Article) articles;
-        SingleObject temp = SingleObject.getInstance();
-        temp.setAuthor(a.getAuthor());
-        temp.setTitle(a.getTitle());
-        temp.setPublishedAt(a.getPublishedAt());
 */
-
-
-
-        viewPager = (VerticalViewPager) findViewById(R.id.ViewPager);
-        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(viewPagerAdapter);
-    }
-
-}

@@ -52,11 +52,9 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         List<String>lekhak = temp.getWriter();
         temp.setPosi(position);
 
-        Bundle bundle = new Bundle();
-        ArrayList<String> title = bundle.getStringArrayList("one");
-        //Log.d("BUNDLE##",+String.valueOf(title));
 
         Bundle bundle0 = new Bundle();
+
         bundle0.putString("parent",String.valueOf(position));
         bundle0.putString("msg",String.valueOf(lekhak));
         child.setArguments(bundle0);
@@ -69,3 +67,11 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         return 12;
     }
 }
+
+
+
+/*
+    *     Bundle bundle = new Bundle();
+        ArrayList<String> title = bundle.getStringArrayList("one");
+        //Log.d("BUNDLE##",+String.valueOf(title));
+*/
