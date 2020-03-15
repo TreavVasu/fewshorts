@@ -1,9 +1,12 @@
 package com.learning.fewshorts;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Adapter;
 import android.widget.Toast;
 
@@ -25,10 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
     final String API_KEY ="597a94d33b3f4beb96d7f437f3c36510";
     final String CATEGORY = "general";
+
     List<Article> articles =new ArrayList<>();
+    Adapter adapter;
 
     public VerticalViewPager viewPager;
     public ViewPagerAdapter viewPagerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +45,7 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdapter);
 
-
         //Experiments
-        //Article article = (Article) dataMining();
 
 
         Call<Headlines> call = ApiClient.getInstance().getApi().getHeadlines("in", CATEGORY, API_KEY);
@@ -53,10 +57,30 @@ public class MainActivity extends AppCompatActivity {
 
                     return;
                 }
+                List<Article> articles = response.body().getArticles();
+                List<String> lekhak =new ArrayList<String>();
+                for (Article article:articles){
+                    String x ="";int i = 0;
 
-                articles = response.body().getArticles();
 
-                Toast.makeText(MainActivity.this, "Intent Here Init Ok ", Toast.LENGTH_SHORT).show();
+                    x+=article.getAuthor()+"\n\n";
+
+                    Log.d("myTag", "################Resp:"+x);
+                    lekhak.add(article.getAuthor());
+                    Log.d("Author", String.valueOf(lekhak));
+                    i++;
+                }
+
+
+                Bundle bundle = new Bundle();
+
+                //Intent intent = new Intent(MainActivity.this,ChildFragment.class);
+                //intent.putStringArrayListExtra("authors", (ArrayList<String>) lekhak);
+
+
+                bundle.putStringArrayList("one", (ArrayList<String>) lekhak);
+
+
 
             }
 
@@ -65,7 +89,13 @@ public class MainActivity extends AppCompatActivity {
                 t.getLocalizedMessage();
             }
         });
-
+/*
+        Article a = (Article) articles;
+        SingleObject temp = SingleObject.getInstance();
+        temp.setAuthor(a.getAuthor());
+        temp.setTitle(a.getTitle());
+        temp.setPublishedAt(a.getPublishedAt());
+*/
 
     }
 

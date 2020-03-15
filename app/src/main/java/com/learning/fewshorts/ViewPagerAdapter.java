@@ -1,7 +1,9 @@
 package com.learning.fewshorts;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,18 +32,12 @@ import static android.app.PendingIntent.getActivity;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
-    final String API_KEY ="597a94d33b3f4beb96d7f437f3c36510";
-    final String CATEGORY = "general";
-    List<Article> articles =new ArrayList<>();
+    Article article= new Article();
 
     ImageView imageView;
     TextView tvTitle, tvSource, tvDate;
     CardView card;
-
-    Intent intent = new Intent();
-    Article article = (Article) intent.getSerializableExtra("article");
-
-    public ViewPagerAdapter(@NonNull FragmentManager fm) {
+    public ViewPagerAdapter(@NonNull FragmentManager fm ) {
 
         super(fm);
     }//Behaviour parameter b dal sakta h idhar
@@ -49,19 +45,17 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
+
         ChildFragment child = new ChildFragment();
 
         Bundle bundle = new Bundle();
-  /*      bundle.putSerializable("Source",article.getSource().getName());
-        //bundle.putSerializable("ImageUrl",article.getUrlToImage());
-        //bundle.putString("Source",article.getSource().getName());
-        bundle.putSerializable("Title",article.getTitle());
-        bundle.putSerializable("Date",article.getPublishedAt());
-*/
-        bundle.putString("parent",String.valueOf(position));
+        ArrayList<String> title = bundle.getStringArrayList("one");
+        Log.d("BUNDLE##","##@#@#$%%^^&: "+String.valueOf(title));
 
-
-        child.setArguments(bundle);
+        Bundle bundle0 = new Bundle();
+        bundle0.putString("parent",String.valueOf(position));
+        bundle0.putString("msg",String.valueOf(title));
+        child.setArguments(bundle0);
 
         return child;
     }

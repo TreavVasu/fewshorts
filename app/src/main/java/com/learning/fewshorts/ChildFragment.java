@@ -1,7 +1,9 @@
 package com.learning.fewshorts;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +26,7 @@ import com.learning.fewshorts.RecievedData.Headlines;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -41,30 +44,26 @@ public class ChildFragment extends Fragment {
     }
 
     Context context;
-    List<Article> articles = new ArrayList<>();
+    //List<Article> articles;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_child, container, false);
-        //imageView = (ImageView) view.findViewById(R.id.imageHere);
+        //imageView = (ImageView) view .findViewById(R.id.imageHere);
         tvTitle = (TextView) view.findViewById(R.id.titleHere);
         tvSource = (TextView) view.findViewById(R.id.sourceHere);
         tvDate = (TextView) view.findViewById(R.id.dateHere);
 
-/*
-        Bundle bundle =getArguments();
-        tvTitle.setText(bundle.getString("Title"));
-        tvSource.setText(bundle.getString("Source"));
-        tvDate.setText(bundle.getString("Date"));
-*/
 
-        Toast.makeText(getContext(), "Passing Here Ok  ", Toast.LENGTH_SHORT).show();
+        tvDate.setText("Data AAra h");
 
-        Bundle bundle = getArguments();
-        tvTitle.setText("Parent"+bundle.getString("parent"));
-        tvSource.setText("Child"+bundle.getString("Child"));
+        Bundle bundle0 =getArguments();
+        List<String> auth =new ArrayList<String>();
+        tvTitle.setText(bundle0.getString("parent"));
+
+
         return view;
 
 
@@ -75,3 +74,14 @@ public class ChildFragment extends Fragment {
 
 }
 
+//Bundle bundle =getArguments();
+
+//ArrayList<String> authors =bundle.getStringArrayList("authors");
+
+//Log.d("HEREEEEEEEEEEEEEEE: ",authors.toString());
+
+
+/*      tvSource.setText(bundle.getString("Source"));
+        tvDate.setText(bundle.getString("Date"));
+        Toast.makeText(getContext(), "Passing Here Ok  ", Toast.LENGTH_SHORT).show();
+*/
