@@ -8,13 +8,81 @@ public class SingleObject {
 
         //create an object of SingleObject
         private static SingleObject instance = new SingleObject();
+        private List<String> writer;
+        private int posi;
+        private int number;
 
-        private String author;
-        private String title;
-        private String description;
-        private String urlToImage;
-        private String publishedAt;
-        private String content;
+        private List<String> title;
+        private List<String> description;
+        private List<String> urlToImage;
+        private List<String> publishedAt;
+
+    public List<String> getTitle() {
+        return title;
+    }
+
+    public void setTitle(List<String> title) {
+        this.title = title;
+    }
+
+    public List<String> getDescription() {
+        return description;
+    }
+
+    public void setDescription(List<String> description) {
+        this.description = description;
+    }
+
+    public List<String> getUrlToImage() {
+        return urlToImage;
+    }
+
+    public void setUrlToImage(List<String> urlToImage) {
+        this.urlToImage = urlToImage;
+    }
+
+    public List<String> getPublishedAt() {
+        return publishedAt;
+    }
+
+    public void setPublishedAt(List<String> publishedAt) {
+        this.publishedAt = publishedAt;
+    }
+
+    public List<String> getContent() {
+        return content;
+    }
+
+    public void setContent(List<String> content) {
+        this.content = content;
+    }
+
+    private List<String> content;
+
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public int getPosi() {
+        return posi;
+    }
+
+    public void setPosi(int posi) {
+        this.posi = posi;
+    }
+
+    public List<String> getWriter() {
+        return writer;
+    }
+
+    public void setWriter(List<String> writer) {
+        this.writer = writer;
+    }
 
 
     //make the constructor private so that this class cannot be
@@ -28,54 +96,6 @@ public class SingleObject {
 
         // here u can declare getter setter
 
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getUrlToImage() {
-        return urlToImage;
-    }
-
-    public void setUrlToImage(String urlToImage) {
-        this.urlToImage = urlToImage;
-    }
-
-    public String getPublishedAt() {
-        return publishedAt;
-    }
-
-    public void setPublishedAt(String publishedAt) {
-        this.publishedAt = publishedAt;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
 
 
     }

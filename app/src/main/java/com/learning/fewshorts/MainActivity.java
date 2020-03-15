@@ -41,9 +41,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        viewPager = (VerticalViewPager) findViewById(R.id.ViewPager);
-        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(viewPagerAdapter);
 
         //Experiments
 
@@ -59,18 +56,34 @@ public class MainActivity extends AppCompatActivity {
                 }
                 List<Article> articles = response.body().getArticles();
                 List<String> lekhak =new ArrayList<String>();
+
+                List<String> title =new ArrayList<String>();
+                List<String> descr =new ArrayList<String>();
+                List<String> url =new ArrayList<String>();
+                List<String> date =new ArrayList<String>();
+
+                //String x ="";
                 for (Article article:articles){
-                    String x ="";int i = 0;
+                    //  x+=article.getAuthor();
+                    //Log.d("myTag", "#Resp:"+x);
 
+                    if (article.getAuthor()==null){
+                        Log.d("Author", String.valueOf(lekhak));
 
-                    x+=article.getAuthor()+"\n\n";
+                    }else {
+                        lekhak.add(article.getAuthor());
+                        title.add(article.getTitle());
+                        descr.add(article.getDescription());
+                        url.add(article.getUrlToImage());
+                        date.add(article.getPublishedAt());
+                    }
 
-                    Log.d("myTag", "################Resp:"+x);
-                    lekhak.add(article.getAuthor());
-                    Log.d("Author", String.valueOf(lekhak));
-                    i++;
                 }
+                Log.d("Author", String.valueOf(lekhak));
 
+                SingleObject temp = SingleObject.getInstance();
+                temp.setWriter(lekhak);
+                temp.setNumber(lekhak.size());
 
                 Bundle bundle = new Bundle();
 
@@ -97,6 +110,11 @@ public class MainActivity extends AppCompatActivity {
         temp.setPublishedAt(a.getPublishedAt());
 */
 
+
+
+        viewPager = (VerticalViewPager) findViewById(R.id.ViewPager);
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(viewPagerAdapter);
     }
 
 }

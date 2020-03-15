@@ -59,9 +59,19 @@ public class ChildFragment extends Fragment {
 
         tvDate.setText("Data AAra h");
 
-        Bundle bundle0 =getArguments();
-        List<String> auth =new ArrayList<String>();
-        tvTitle.setText(bundle0.getString("parent"));
+        SingleObject temp = SingleObject.getInstance();
+        List<String>lekhak = temp.getWriter();
+        int pos = temp.getPosi();
+        int siz = temp.getNumber();
+
+        //Beauties Of Project :)
+        Log.d("NULL:",String.valueOf(lekhak));
+        Log.d("Position: ",String.valueOf(pos)+"X"+String.valueOf(siz));
+        Log.d("Main: ",String.valueOf(lekhak.get(pos)));
+        //Log.d("Size",String.valueOf(lekhak.size()));
+
+
+        tvSource.setText(String.valueOf(lekhak.get(pos)));
 
 
         return view;
@@ -73,15 +83,9 @@ public class ChildFragment extends Fragment {
 
 
 }
+/*
+*           Wasted Effort
+        Bundle bundle0 =getArguments();
+        String k =bundle0.getString("msg");
 
-//Bundle bundle =getArguments();
-
-//ArrayList<String> authors =bundle.getStringArrayList("authors");
-
-//Log.d("HEREEEEEEEEEEEEEEE: ",authors.toString());
-
-
-/*      tvSource.setText(bundle.getString("Source"));
-        tvDate.setText(bundle.getString("Date"));
-        Toast.makeText(getContext(), "Passing Here Ok  ", Toast.LENGTH_SHORT).show();
-*/
+* */

@@ -48,13 +48,17 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
         ChildFragment child = new ChildFragment();
 
+        SingleObject temp = SingleObject.getInstance();
+        List<String>lekhak = temp.getWriter();
+        temp.setPosi(position);
+
         Bundle bundle = new Bundle();
         ArrayList<String> title = bundle.getStringArrayList("one");
-        Log.d("BUNDLE##","##@#@#$%%^^&: "+String.valueOf(title));
+        //Log.d("BUNDLE##",+String.valueOf(title));
 
         Bundle bundle0 = new Bundle();
         bundle0.putString("parent",String.valueOf(position));
-        bundle0.putString("msg",String.valueOf(title));
+        bundle0.putString("msg",String.valueOf(lekhak));
         child.setArguments(bundle0);
 
         return child;
@@ -62,6 +66,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 20;
+        return 12;
     }
 }
