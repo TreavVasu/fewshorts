@@ -6,7 +6,9 @@ import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Adapter;
 import android.widget.Toast;
 
@@ -30,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
     final String API_KEY ="597a94d33b3f4beb96d7f437f3c36510";
     final String CATEGORY = "general";
-
     List<Article> articles =new ArrayList<>();
     Adapter adapter;
 
@@ -39,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
 
 
 

@@ -35,7 +35,7 @@ import retrofit2.Response;
 
 public class ChildFragment extends Fragment {
     ImageView imageView;
-    TextView tvTitle, tvSource, tvDate;
+    TextView tvTitle, tvSource, tvDate,tvDesc;
     CardView card;
 
 
@@ -55,9 +55,7 @@ public class ChildFragment extends Fragment {
         tvTitle = (TextView) view.findViewById(R.id.titleHere);
         tvSource = (TextView) view.findViewById(R.id.sourceHere);
         tvDate = (TextView) view.findViewById(R.id.dateHere);
-
-
-        tvDate.setText("Data AAra h");
+        tvDesc =(TextView)view.findViewById(R.id.descHere);
 
         SingleObject temp = SingleObject.getInstance();
         List<String>lekhak = temp.getWriter();
@@ -70,16 +68,18 @@ public class ChildFragment extends Fragment {
         int pos = temp.getPosi();
         int siz = temp.getNumber();
 
+        /*
         //Beauties Of Project :)
         Log.d("NULL:",String.valueOf(lekhak));
         Log.d("Position: ",String.valueOf(pos)+"X"+String.valueOf(siz));
         Log.d("Main: ",String.valueOf(lekhak.get(pos)));
         //Log.d("Size",String.valueOf(lekhak.size()));
-
+        */
 
         tvSource.setText(String.valueOf(lekhak.get(pos)));
         tvTitle.setText(String.valueOf(title.get(pos)));
         tvDate.setText(String.valueOf(date.get(pos)));
+        tvDesc.setText(String.valueOf(desc.get(pos)));
         //Image Loading
         try {
 
