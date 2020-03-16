@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class Article {
 
+    private static Article instance = new Article();
+
     @SerializedName("source")
     @Expose
     private Source source;
@@ -104,5 +106,8 @@ public class Article {
 
 
 
+    public static Article getInstance() {
+        return instance;
+    }
 
 }

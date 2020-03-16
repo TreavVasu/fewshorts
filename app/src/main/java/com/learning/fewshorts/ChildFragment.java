@@ -67,21 +67,19 @@ public class ChildFragment extends Fragment {
 
         int pos = temp.getPosi();
         int siz = temp.getNumber();
-
-        /*
+        Article articles = Article.getInstance();
         //Beauties Of Project :)
-        Log.d("NULL:",String.valueOf(lekhak));
-        Log.d("Position: ",String.valueOf(pos)+"X"+String.valueOf(siz));
-        Log.d("Main: ",String.valueOf(lekhak.get(pos)));
+        //Log.d("NULL:",String.valueOf(lekhak));
+        //Log.d("Position: ",String.valueOf(pos)+"X"+String.valueOf(siz));
+        //Log.d("Main: ",String.valueOf(lekhak.get(pos)));
         //Log.d("Size",String.valueOf(lekhak.size()));
-        */
 
-        tvSource.setText(String.valueOf(lekhak.get(pos)));
-        tvTitle.setText(String.valueOf(title.get(pos)));
-        tvDate.setText(String.valueOf(date.get(pos)));
-        tvDesc.setText(String.valueOf(desc.get(pos)));
         //Image Loading
         try {
+            tvSource.setText(String.valueOf(lekhak.get(pos)));
+            tvTitle.setText(String.valueOf(title.get(pos)));
+            tvDate.setText(String.valueOf(date.get(pos)));
+            tvDesc.setText(String.valueOf(desc.get(pos)));
 
             Picasso.with(getContext()).load(url.get(pos)).into(imageView);
 

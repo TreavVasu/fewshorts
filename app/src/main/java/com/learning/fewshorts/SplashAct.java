@@ -13,7 +13,7 @@ import android.widget.ImageView;
 
 public class SplashAct extends AppCompatActivity {
 
-    private static int SPLASH_TIME = 5000;
+    private static int SPLASH_TIME = 2500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         //Experiments
 
 
@@ -92,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Date", String.valueOf(date));
                 Log.d("Siz:",String.valueOf(title.size()));
 
+
+                Toast. makeText(getApplicationContext(),"Please Wait",Toast. LENGTH_LONG);
 
                 SingleObject temp = SingleObject.getInstance();
                 temp.setWriter(lekhak);

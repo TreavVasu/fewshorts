@@ -33,17 +33,22 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/titleHere"
                 android:text="Title"
-                android:textSize="35sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:layout_below="@+id/imageHere"
+                android:fontFamily="@font/acme_reg"
                  />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/descHere"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:layout_below="@+id/imageHere"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="75dp"
+                android:fontFamily="@font/betolla"
+                android:text="@string/apology"
+                android:gravity="center"
                 />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -54,18 +59,22 @@
                 android:layout_alignParentBottom="true"
                 >
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/sourceHere"
                     android:text="Source"
-                    android:textSize="25sp"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/acme_reg"
+                    android:textAlignment="viewStart"
                     android:layout_weight="1"
                     />
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/dateHere"
-                    android:textSize="25sp"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/acme_reg"
+                    android:textAlignment="viewEnd"
                     android:layout_weight="1"
                     android:text="Date"/>
             </LinearLayout>
