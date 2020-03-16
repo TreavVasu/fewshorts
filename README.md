@@ -26,9 +26,10 @@ It is an android application for Implementing use of News Api Intents ViewPager 
   * Maximum - 29
 
 ### Libraries Used :
-* [Retrofit 2.7.2](https://square.github.io/retrofit/)\
+* [Retrofit 2.7.2](https://square.github.io/retrofit/)
 * [Picasso](https://square.github.io/picasso/)
 * [Gson](https://github.com/google/gson)
+*[CardView](https://developer.android.com/reference/android/support/v7/widget/CardView)
 
 ## Walkthrough
 1. ### Splash Screen : 
