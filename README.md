@@ -45,7 +45,9 @@ It is an android application for Implementing use of News Api Intents ViewPager 
 3. ### News and Contents with smooth scrolling :
     Built for smooth and efficient loading and Easy scrolling of app .In keeping the usual habbit of normal user the app is made such that the effect is recreated when someone scrolls feeds of social media apps.The implementation is also done keeping in mind the Addiction of users   
     
-    <img src="" width="300">
+    <img src="https://github.com/TreavVasu/fewshorts/blob/master/intro_one.gif" width="300"/>
+    <img src="https://github.com/TreavVasu/fewshorts/blob/master/My%20Video2.gif" width="300"/>
+    
     
 
  
