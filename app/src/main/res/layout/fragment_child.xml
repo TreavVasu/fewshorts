@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="@drawable/gradient"
     >
 
@@ -14,9 +15,12 @@
         android:background="@drawable/edges"
         android:layout_margin="10dp"
         android:id="@+id/cardV"
+
         >
 
         <RelativeLayout
+
+            android:background="@drawable/gradient"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -46,11 +50,13 @@
                 android:textSize="20sp"
                 android:layout_below="@+id/imageHere"
                 android:layout_marginTop="75dp"
+                android:textStyle="bold"
                 android:fontFamily="@font/betolla"
                 android:text="@string/apology"
                 android:gravity="center"
                 />
             <LinearLayout
+
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

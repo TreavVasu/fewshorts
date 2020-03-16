@@ -68,6 +68,7 @@ public class ChildFragment extends Fragment {
         int pos = temp.getPosi();
         int siz = temp.getNumber();
         Article articles = Article.getInstance();
+
         //Beauties Of Project :)
         //Log.d("NULL:",String.valueOf(lekhak));
         //Log.d("Position: ",String.valueOf(pos)+"X"+String.valueOf(siz));

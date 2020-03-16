@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 }
+
                 Log.d("Author", String.valueOf(lekhak));
                 Log.d("Title", String.valueOf(title));
                 Log.d("Desc", String.valueOf(descr));

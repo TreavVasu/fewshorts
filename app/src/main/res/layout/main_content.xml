@@ -5,7 +5,8 @@
     <com.learning.fewshorts.VerticalViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/ViewPager">
+        android:id="@+id/ViewPager"
+        android:background="@drawable/gradient_back">
 
     </com.learning.fewshorts.VerticalViewPager>
 
