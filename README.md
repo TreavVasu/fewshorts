@@ -26,9 +26,7 @@ It is an android application for Implementing use of News Api Intents ViewPager 
   * Maximum - 29
 
 ### Libraries Used :
-* [Retrofit 2.7.2](https://square.github.io/retrofit/)
-* [RxAndroid 2.2.10](https://github.com/ReactiveX/RxAndroid)
-* [RxJava 2.1.1](https://github.com/ReactiveX/RxJava)
+* [Retrofit 2.7.2](https://square.github.io/retrofit/)\
 * [Picasso](https://square.github.io/picasso/)
 * [Gson](https://github.com/google/gson)
 
